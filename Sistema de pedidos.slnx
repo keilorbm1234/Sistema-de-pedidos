@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Sistema de pedidos/Sistema de pedidos.vcxproj" />
+  <Project Path="Sistema de pedidos/Sistema de pedidos.vcxproj" Id="c9487097-2005-46f4-812d-8d7d8abb275d" />
 </Solution>
