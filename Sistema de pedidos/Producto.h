@@ -1,11 +1,11 @@
 #pragma once
-#define IPRODUCTO_H
 #include <string>
 using namespace std;	
 
-class IProducto {
+class Producto {
 public: 
-	~IProducto() = default;
+	virtual ~Producto() = default;
 	virtual string getNombre() const = 0; 
-	virtual string getPrecio() const = 0; 
+	virtual string getId() const = 0;
+	virtual double getPrecio() const = 0; 
 };
