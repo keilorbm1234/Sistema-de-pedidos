@@ -129,12 +129,14 @@
   <ItemGroup>
     <ClCompile Include="Bebida.cpp" />
     <ClCompile Include="Comida.cpp" />
+    <ClCompile Include="Pedido.cpp" />
     <ClCompile Include="ProductoBase.cpp" />
     <ClCompile Include="Sistema de pedidos.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bebida.h" />
     <ClInclude Include="Comida.h" />
+    <ClInclude Include="Pedido.h" />
     <ClInclude Include="Producto.h" />
     <ClInclude Include="ProductoBase.h" />
   </ItemGroup>
