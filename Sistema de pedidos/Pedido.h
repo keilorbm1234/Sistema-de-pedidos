@@ -1,5 +1,14 @@
 #pragma once
-class Pedido
-{
+#include <vector>
+#include "ProductoBase.h"
+#include "CalculoPedido.h"
+
+class Pedido {
+private:
+	std::vector<CalculoPedido*> calculador;
+public: 
+	void enviarExtra(); 
+
 };
+
 
