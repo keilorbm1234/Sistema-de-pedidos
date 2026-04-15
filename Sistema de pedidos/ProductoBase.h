@@ -5,7 +5,7 @@
 class ProductoBase : public Producto {
 protected: 
 	string nombre; 
-	double precio; 
+	const double precio; 
 	string identificador;
 public: 
 	ProductoBase(string n, double p, string id);

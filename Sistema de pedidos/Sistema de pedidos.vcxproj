@@ -127,22 +127,42 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AguaDulce.cpp" />
     <ClCompile Include="Bebida.cpp" />
+    <ClCompile Include="Cafe.cpp" />
     <ClCompile Include="CalculoPedido.cpp" />
+    <ClCompile Include="Cas.cpp" />
+    <ClCompile Include="Casado.cpp" />
+    <ClCompile Include="Churchill.cpp" />
     <ClCompile Include="Comida.cpp" />
+    <ClCompile Include="GalloPinto.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Pedido.cpp" />
     <ClCompile Include="Postre.cpp" />
     <ClCompile Include="ProductoBase.cpp" />
+    <ClCompile Include="RiceAndBeans.cpp" />
     <ClCompile Include="Sistema de pedidos.cpp" />
+    <ClCompile Include="TamalAsado.cpp" />
+    <ClCompile Include="TortaChilena.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AguaDulce.h" />
     <ClInclude Include="Bebida.h" />
+    <ClInclude Include="Cafe.h" />
     <ClInclude Include="CalculoPedido.h" />
+    <ClInclude Include="Cas.h" />
+    <ClInclude Include="Casado.h" />
+    <ClInclude Include="Churchill.h" />
     <ClInclude Include="Comida.h" />
+    <ClInclude Include="GalloPinto.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Pedido.h" />
     <ClInclude Include="Postre.h" />
     <ClInclude Include="Producto.h" />
     <ClInclude Include="ProductoBase.h" />
+    <ClInclude Include="RiceAndBeans.h" />
+    <ClInclude Include="TamalAsado.h" />
+    <ClInclude Include="TortaChilena.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
