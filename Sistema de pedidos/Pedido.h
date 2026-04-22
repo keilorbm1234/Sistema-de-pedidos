@@ -16,9 +16,12 @@ public:
 	double calcularTotal() const;
 	double calcularSubtotal() const;
 	double calcularIva() const;
+	double calcularTotalConDescuento(double porcentaje) const; 
 	bool estaVacio() const;
 	void procesarPago(MetodoPago& metodo) const; //Uso de delegate para procesamiento del pago. 
+	void procesarPagoConDescuento(MetodoPago& metodo, double porcentaje) const; 
 	const vector<unique_ptr<Producto>>& getProductos() const; //Importante para el calculo. 
+	void mostrarProductos(); 
 };
 
 
