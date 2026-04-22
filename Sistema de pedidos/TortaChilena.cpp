@@ -1,4 +1,4 @@
 #include "TortaChilena.h"
 
-TortaChilena::TortaChilena(string n, double p, string id) : Postre(n, p, id) {
+TortaChilena::TortaChilena() : Postre("Torta Chilena", 2500, "TORTA_CHILENA") {
 }

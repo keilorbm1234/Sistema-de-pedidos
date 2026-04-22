@@ -1,4 +1,3 @@
 #include "RiceAndBeans.h"
 
-RiceAndBeans::RiceAndBeans(string n, double p, string id) : Comida(n, p, id) {
-}
+RiceAndBeans::RiceAndBeans() : Comida("Rice and Beans", 3000, "RICEANDBEANS") {

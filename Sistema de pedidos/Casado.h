@@ -2,5 +2,7 @@
 #include "Comida.h"
 
 class Casado : public Comida {
+public:
+	Casado(); 
 };
 
