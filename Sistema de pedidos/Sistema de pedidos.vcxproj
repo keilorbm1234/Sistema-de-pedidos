@@ -156,10 +156,13 @@
     <ClInclude Include="Comida.h" />
     <ClInclude Include="GalloPinto.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="PagoInsuficienteException.h" />
     <ClInclude Include="Pedido.h" />
+    <ClInclude Include="PedidoVacioException.h" />
     <ClInclude Include="Postre.h" />
     <ClInclude Include="Producto.h" />
     <ClInclude Include="ProductoBase.h" />
+    <ClInclude Include="RestauranteException.h" />
     <ClInclude Include="RiceAndBeans.h" />
     <ClInclude Include="TamalAsado.h" />
     <ClInclude Include="TortaChilena.h" />

@@ -1,18 +1,16 @@
 #pragma once
-#include "Pedido.h"
+#include <vector>
+#include <memory>
+#include "Producto.h"
+using namespace std;
 
 class CalculoPedido {
 private: 
 	double iva = 0.13; 
-	double subtotal = 0.0; 
-	double total = 0.0;
-	double descuento = 0.0; 
-	int extra; 
 public:
+	double calcularSubtotal(const vector<unique_ptr<Producto>>& productos) const;
+	double calcularIva(double subtotal) const;
+	double calcularTotal(const vector<unique_ptr<Producto>>& productos);
 	double getIva() const;
-	double getSubtotal() const;
-	double getTotal() const;
-	double getDescuento() const;
-	double calcularTotal();
 };
 
