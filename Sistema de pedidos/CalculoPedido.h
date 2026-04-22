@@ -11,6 +11,8 @@ public:
 	double calcularSubtotal(const vector<unique_ptr<Producto>>& productos) const;
 	double calcularIva(double subtotal) const;
 	double calcularTotal(const vector<unique_ptr<Producto>>& productos) const;
+	double aplicarDescuento(double subtotal, double porcentaje) const; 
+	double calcularTotalConDescuento(const vector<unique_ptr<Producto>>& productos, double porcentaje) const;
 	double getIva() const;
 };
 
