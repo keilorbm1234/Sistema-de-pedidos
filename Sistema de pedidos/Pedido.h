@@ -2,15 +2,23 @@
 #include <vector>
 #include <memory>
 #include "Producto.h"
+#include "CalculoPedido.h"
+#include "MetodoPago.h"
+
 using namespace std;
 
 class Pedido {
 private:
 	vector<unique_ptr<Producto>> productos; // Almacena los productos del pedido
+	CalculoPedido calculo; // Instancia para realizar cálculos del pedido
 public: 
 	void agregarProducto(unique_ptr<Producto> producto);
 	double calcularTotal() const;
+	double calcularSubtotal() const;
+	double calcularIva() const;
 	bool estaVacio() const;
+	void procesarPago(MetodoPago& metodo) const; //Uso de delegate para procesamiento del pago. 
+	const vector<unique_ptr<Producto>>& getProductos() const; //Importante para el calculo. 
 };
 
 
