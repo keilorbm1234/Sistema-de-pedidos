@@ -139,6 +139,9 @@
     <ClCompile Include="ExtraIngrediente.cpp" />
     <ClCompile Include="GalloPinto.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="PagoDigital.cpp" />
+    <ClCompile Include="PagoEfectivo.cpp" />
+    <ClCompile Include="PagoTarjeta.cpp" />
     <ClCompile Include="Pedido.cpp" />
     <ClCompile Include="Postre.cpp" />
     <ClCompile Include="ProductoBase.cpp" />
@@ -165,7 +168,12 @@
     <ClInclude Include="GalloPinto.h" />
     <ClInclude Include="MetodoPago.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="PagoDigital.h" />
+    <ClInclude Include="PagoDigitalException.h" />
+    <ClInclude Include="PagoEfectivo.h" />
     <ClInclude Include="PagoInsuficienteException.h" />
+    <ClInclude Include="PagoNoAutorizadoException.h" />
+    <ClInclude Include="PagoTarjeta.h" />
     <ClInclude Include="Pedido.h" />
     <ClInclude Include="PedidoVacioException.h" />
     <ClInclude Include="Postre.h" />
