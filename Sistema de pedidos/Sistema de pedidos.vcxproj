@@ -140,6 +140,7 @@
     <ClCompile Include="Pedido.cpp" />
     <ClCompile Include="Postre.cpp" />
     <ClCompile Include="ProductoBase.cpp" />
+    <ClCompile Include="ProductoDecorator.cpp" />
     <ClCompile Include="RiceAndBeans.cpp" />
     <ClCompile Include="Sistema de pedidos.cpp" />
     <ClCompile Include="TamalAsado.cpp" />
@@ -147,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AguaDulce.h" />
+    <ClInclude Include="ArchivoNoEncontradoException.h" />
     <ClInclude Include="Bebida.h" />
     <ClInclude Include="Cafe.h" />
     <ClInclude Include="CalculoPedido.h" />
@@ -154,6 +156,7 @@
     <ClInclude Include="Casado.h" />
     <ClInclude Include="Churchill.h" />
     <ClInclude Include="Comida.h" />
+    <ClInclude Include="EntradaInvalidaException.h" />
     <ClInclude Include="GalloPinto.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="PagoInsuficienteException.h" />
@@ -162,6 +165,7 @@
     <ClInclude Include="Postre.h" />
     <ClInclude Include="Producto.h" />
     <ClInclude Include="ProductoBase.h" />
+    <ClInclude Include="ProductoDecorator.h" />
     <ClInclude Include="RestauranteException.h" />
     <ClInclude Include="RiceAndBeans.h" />
     <ClInclude Include="TamalAsado.h" />
