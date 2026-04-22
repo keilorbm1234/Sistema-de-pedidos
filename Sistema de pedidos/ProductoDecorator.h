@@ -1,17 +1,16 @@
-#pragma once
-#include <vector>
+#pragma once 
 #include <memory>
-#include <string>
 #include "Producto.h"
 
 class ProductoDecorator : public Producto {
 protected:
 	unique_ptr<Producto> producto;
 public:
-	ProductoDecorator(unique_ptr<Producto>& prod); 
+	ProductoDecorator(unique_ptr<Producto> prod); 
 	string getNombre() const override;
 	double getPrecio() const override;
 	string getId() const override;
+	virtual ~ProductoDecorator() = default;
 };
 
 

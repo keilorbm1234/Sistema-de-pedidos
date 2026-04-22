@@ -131,10 +131,12 @@
     <ClCompile Include="Bebida.cpp" />
     <ClCompile Include="Cafe.cpp" />
     <ClCompile Include="CalculoPedido.cpp" />
+    <ClCompile Include="CambioTamanio.cpp" />
     <ClCompile Include="Cas.cpp" />
     <ClCompile Include="Casado.cpp" />
     <ClCompile Include="Churchill.cpp" />
     <ClCompile Include="Comida.cpp" />
+    <ClCompile Include="ExtraIngrediente.cpp" />
     <ClCompile Include="GalloPinto.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Pedido.cpp" />
@@ -142,6 +144,7 @@
     <ClCompile Include="ProductoBase.cpp" />
     <ClCompile Include="ProductoDecorator.cpp" />
     <ClCompile Include="RiceAndBeans.cpp" />
+    <ClCompile Include="SinIngrediente.cpp" />
     <ClCompile Include="Sistema de pedidos.cpp" />
     <ClCompile Include="TamalAsado.cpp" />
     <ClCompile Include="TortaChilena.cpp" />
@@ -152,11 +155,13 @@
     <ClInclude Include="Bebida.h" />
     <ClInclude Include="Cafe.h" />
     <ClInclude Include="CalculoPedido.h" />
+    <ClInclude Include="CambioTamanio.h" />
     <ClInclude Include="Cas.h" />
     <ClInclude Include="Casado.h" />
     <ClInclude Include="Churchill.h" />
     <ClInclude Include="Comida.h" />
     <ClInclude Include="EntradaInvalidaException.h" />
+    <ClInclude Include="ExtraIngrediente.h" />
     <ClInclude Include="GalloPinto.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="PagoInsuficienteException.h" />
@@ -168,6 +173,7 @@
     <ClInclude Include="ProductoDecorator.h" />
     <ClInclude Include="RestauranteException.h" />
     <ClInclude Include="RiceAndBeans.h" />
+    <ClInclude Include="SinIngrediente.h" />
     <ClInclude Include="TamalAsado.h" />
     <ClInclude Include="TortaChilena.h" />
   </ItemGroup>
