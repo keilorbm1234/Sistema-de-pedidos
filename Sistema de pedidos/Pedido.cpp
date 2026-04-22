@@ -59,7 +59,7 @@ const vector<unique_ptr<Producto>>& Pedido::getProductos() const {
 	return productos; 
 }
 
-void Pedido::mostrarProductos() {
+void Pedido::mostrarProductos() const {
 	for (const auto& p : productos) {
 		if (dynamic_cast<Comida*>(p.get())) {
 			cout << "[Comida]  ";
