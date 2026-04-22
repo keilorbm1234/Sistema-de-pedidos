@@ -6,9 +6,8 @@ using namespace std;
 
 class Pedido {
 private:
-	vector<unique_ptr<Producto>> productos;
+	vector<unique_ptr<Producto>> productos; // Almacena los productos del pedido
 public: 
-	Pedido(); 
 	void agregarProducto(unique_ptr<Producto> producto);
 	double calcularTotal() const;
 	bool estaVacio() const;

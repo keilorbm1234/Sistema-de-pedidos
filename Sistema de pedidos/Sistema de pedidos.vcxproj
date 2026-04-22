@@ -163,6 +163,7 @@
     <ClInclude Include="EntradaInvalidaException.h" />
     <ClInclude Include="ExtraIngrediente.h" />
     <ClInclude Include="GalloPinto.h" />
+    <ClInclude Include="MetodoPago.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="PagoInsuficienteException.h" />
     <ClInclude Include="Pedido.h" />
