@@ -22,17 +22,6 @@ bool Sistema::hayPedidos() const {
 	return !pedidos.empty(); 
 }
 
-void Sistema::guardarPedidos(const string& archivo) const {
-	GestorArchivos gestor(archivo);
-	gestor.guardar(pedidos); 
-}
- 
-void Sistema::cargarPedidos(const string& archivo) {
-	GestorArchivos gestor(archivo);
-	auto lineas = gestor.cargar(); 
-	// Aqui se deberia implementar la logica para convertir las lineas en objetos Pedido y agregarlos a la lista de pedidos. 
-}	
-
 void Sistema::eliminarUltimoPedido() {
 	if (pedidos.empty()) 
 		throw runtime_error("No hay pedidos para eliminar"); 

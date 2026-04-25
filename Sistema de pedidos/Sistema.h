@@ -13,8 +13,6 @@ public:
 	void agregarPedido(Pedido pedido); 
 	const vector<Pedido>& getPedidos() const; 
 	bool hayPedidos() const; 
-	void guardarPedidos(const string& archivo) const;
-	void cargarPedidos(const string& archivo);
 	void eliminarUltimoPedido();
 };
 

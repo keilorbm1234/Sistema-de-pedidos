@@ -95,26 +95,30 @@ int main() {
                 if (!sistema.hayPedidos())
                     throw RestauranteException("No hay pedidos activos.");
 
-                int prodId;
-                cout << "Ingrese ID del producto: ";
-                cin >> prodId;
+                menu.mostrar();
+                cout << "Ingrese el ID del producto (1-9): ";
+                int prodId; 
+                cin >> prodId; 
 
-                if (cin.fail())
-                    throw EntradaInvalidaException();
+                if (cin.fail()) throw EntradaInvalidaException();
 
-                Producto* producto = nullptr;
+                unique_ptr<Producto> producto;
 
                 switch (prodId) {
-                case 1: producto = new Casado(); break;
-                case 2: producto = new GalloPinto(); break;
-                case 3: producto = new Cafe(); break;
-                default:
-                    throw RestauranteException("Producto no encontrado.");
+                case 1: producto = make_unique<Casado>(); break;
+                case 2: producto = make_unique<GalloPinto>(); break;
+                case 3: producto = make_unique<RiceAndBeans>(); break;
+                case 4: producto = make_unique<Cafe>(); break;
+                case 5: producto = make_unique<AguaDulce>(); break;
+                case 6: producto = make_unique<Cas>(); break;
+                case 7: producto = make_unique<Churchill>(); break;
+                case 8: producto = make_unique<TamalAsado>(); break;
+                case 9: producto = make_unique<TortaChilena>(); break;
+                default: throw RestauranteException("Producto no encontrado.");
                 }
 
-               // sistema.getPedidoActual().agregarProducto(producto);
-
-                cout << "Producto agregado.\n";
+                sistema.getPedidoActual().agregarProducto(move(producto));
+                cout << "Producto agregado correctamente.\n";
                 break;
             }
 
@@ -144,13 +148,9 @@ int main() {
                 cout << "\n--- Pago ---\n";
 
                 if (!sistema.hayPedidos())
-                    throw PedidoVacioException();   
-
-                double total = sistema.getPedidoActual().calcularTotal();
-
-                if (total <= 0)
                     throw PedidoVacioException();
 
+                double total = sistema.getPedidoActual().calcularTotal();
                 cout << "Total a pagar: C/" << total << "\n";
 
                 cout << "Seleccione metodo:\n";
@@ -159,21 +159,33 @@ int main() {
                 int metodo;
                 cin >> metodo;
 
-                MetodoPago* pago = nullptr;
+                if (cin.fail()) throw EntradaInvalidaException();
 
                 switch (metodo) {
-                case 1: //pago = new PagoEfectivo(); break;
-                case 2: //pago = new PagoTarjeta(); break;
-                case 3:// pago = new PagoDigital(); break;
+                case 1: {
+                    cout << "Monto entregado: C/";
+                    double monto;
+                    cin >> monto;
+                    PagoEfectivo pago(monto);
+                    sistema.getPedidoActual().procesarPago(pago);
+                    cout << "Cambio: C/" << (monto - total) << "\n";
+                    break;
+                }
+                case 2: {
+                    PagoTarjeta pago(true);
+                    sistema.getPedidoActual().procesarPago(pago);
+                    break;
+                }
+                case 3: {
+                    PagoDigital pago(true);
+                    sistema.getPedidoActual().procesarPago(pago);
+                    break;
+                }
                 default:
-                    throw PagoNoAutorizadoException();
+                    throw EntradaInvalidaException();
                 }
 
-                pago->pagar(total);
-
                 cout << "Pago realizado con exito.\n";
-                delete pago;
-
                 break;
             }
 
