@@ -136,6 +136,7 @@
     <ClCompile Include="Casado.cpp" />
     <ClCompile Include="Churchill.cpp" />
     <ClCompile Include="Comida.cpp" />
+    <ClCompile Include="DescuentoPorcentaje.cpp" />
     <ClCompile Include="ExtraIngrediente.cpp" />
     <ClCompile Include="GalloPinto.cpp" />
     <ClCompile Include="GestorArchivos.cpp" />
@@ -165,6 +166,8 @@
     <ClInclude Include="Casado.h" />
     <ClInclude Include="Churchill.h" />
     <ClInclude Include="Comida.h" />
+    <ClInclude Include="Descuento.h" />
+    <ClInclude Include="DescuentoPorcentaje.h" />
     <ClInclude Include="EntradaInvalidaException.h" />
     <ClInclude Include="ExtraIngrediente.h" />
     <ClInclude Include="GalloPinto.h" />

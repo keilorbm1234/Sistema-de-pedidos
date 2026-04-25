@@ -19,17 +19,12 @@ double CalculoPedido::calcularTotal(const vector<unique_ptr<Producto>>& producto
 	return subtotal + impuesto;
 }
 
-double CalculoPedido::aplicarDescuento(double subtotal, double porcentaje) const {
-	if (porcentaje < 0.0 || porcentaje > 100.0) {
-		throw invalid_argument("El porcentaje de descuento debe estar entre 0 y 100");
-	}
-	return subtotal * (1.0 - porcentaje / 100.0); 
-}
-
-double CalculoPedido::calcularTotalConDescuento(const vector<unique_ptr<Producto>>& productos, double porcentaje) const {
-	double subtotal = calcularSubtotal(productos); 
-	double conDescuento = aplicarDescuento(subtotal, porcentaje); 
-	return conDescuento + calcularIva(conDescuento); 
+double CalculoPedido::calcularTotalConDescuento(
+	const vector<unique_ptr<Producto>>& productos,
+	const Descuento& descuento) const {
+	double subtotal = calcularSubtotal(productos);
+	double conDescuento = descuento.aplicar(subtotal); // Delega al descuento
+	return conDescuento + calcularIva(conDescuento);
 }
 
 double CalculoPedido::getIva() const {

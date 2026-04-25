@@ -30,11 +30,14 @@ double Pedido::calcularTotal() const {
 	return calculo.calcularTotal(productos); //Delegación al objeto para calcular el total.
 }
 
-double Pedido::calcularTotalConDescuento(double porcentaje) const {
-	if (productos.empty()) {
-		throw PedidoVacioException();
-	}
-	return calculo.calcularTotalConDescuento(productos, porcentaje);
+double Pedido::calcularTotalConDescuento(const Descuento& descuento) const {
+	if (productos.empty()) throw PedidoVacioException();
+	return calculo.calcularTotalConDescuento(productos, descuento);
+}
+
+void Pedido::procesarPagoConDescuento(MetodoPago& metodo, const Descuento& descuento) const {
+	if (productos.empty()) throw PedidoVacioException();
+	metodo.pagar(calcularTotalConDescuento(descuento));
 }
 
 bool Pedido::estaVacio() const {
@@ -46,13 +49,6 @@ void Pedido::procesarPago(MetodoPago& metodo) const {
 		throw PedidoVacioException();
 	}
 	metodo.pagar(calcularTotal()); //Delegación al método de pago para procesar el pago.
-}
-
-void Pedido::procesarPagoConDescuento(MetodoPago& metodo, double porcentaje) const {
-	if (productos.empty()) {
-		throw PedidoVacioException();
-	}
-	metodo.pagar(calcularTotalConDescuento(porcentaje));
 }
 
 const vector<unique_ptr<Producto>>& Pedido::getProductos() const {
