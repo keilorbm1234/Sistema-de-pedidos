@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v145</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -138,6 +138,7 @@
     <ClCompile Include="Comida.cpp" />
     <ClCompile Include="ExtraIngrediente.cpp" />
     <ClCompile Include="GalloPinto.cpp" />
+    <ClCompile Include="GestorArchivos.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="PagoDigital.cpp" />
     <ClCompile Include="PagoEfectivo.cpp" />
@@ -149,6 +150,7 @@
     <ClCompile Include="RiceAndBeans.cpp" />
     <ClCompile Include="SinIngrediente.cpp" />
     <ClCompile Include="Sistema de pedidos.cpp" />
+    <ClCompile Include="Sistema.cpp" />
     <ClCompile Include="TamalAsado.cpp" />
     <ClCompile Include="TortaChilena.cpp" />
   </ItemGroup>
@@ -166,6 +168,7 @@
     <ClInclude Include="EntradaInvalidaException.h" />
     <ClInclude Include="ExtraIngrediente.h" />
     <ClInclude Include="GalloPinto.h" />
+    <ClInclude Include="GestorArchivos.h" />
     <ClInclude Include="MetodoPago.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="PagoDigital.h" />
@@ -183,6 +186,7 @@
     <ClInclude Include="RestauranteException.h" />
     <ClInclude Include="RiceAndBeans.h" />
     <ClInclude Include="SinIngrediente.h" />
+    <ClInclude Include="Sistema.h" />
     <ClInclude Include="TamalAsado.h" />
     <ClInclude Include="TortaChilena.h" />
   </ItemGroup>

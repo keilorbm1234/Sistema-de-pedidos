@@ -2,9 +2,11 @@
 #include "Bebida.h"
 #include "Comida.h"
 #include "Postre.h"
+#include <iostream>
 
-
-class Menu
-{
+using namespace std; 
+class Menu { 
+public: 
+	void mostrar() const; 
 };
 
