@@ -3,5 +3,5 @@
 
 class PedidoVacioException : public RestauranteException {
 public:
-	PedidoVacioException() : RestauranteException("El pedido esta vacío") {}
+	PedidoVacioException() : RestauranteException("El pedido esta vacio") {}
 };

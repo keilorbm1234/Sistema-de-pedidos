@@ -1,0 +1,3 @@
+--- PEDIDO ---
+Café (Grande)|1500
+Total: 1695

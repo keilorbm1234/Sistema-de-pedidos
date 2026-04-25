@@ -57,9 +57,10 @@ int main() {
         cout << "2. Ver menu\n";
         cout << "3. Agregar producto\n";
         cout << "4. Ver pedido actual\n";
-        cout << "5. Pagar\n";
-        cout << "6. Guardar pedidos\n";
-        cout << "7. Cargar pedidos\n";
+        cout << "5. Personalizar producto\n";
+        cout << "6. Pagar\n";
+        cout << "7. Guardar pedidos\n";
+        cout << "8. Cargar pedidos\n";
         cout << "0. Salir\n";
         cout << "=============================================\n";
         cout << "Seleccione una opcion: ";
@@ -145,6 +146,63 @@ int main() {
             }
 
             case 5: {
+                cout << "\n--- Personalizar Producto ---\n";
+
+                if (!sistema.hayPedidos())
+                    throw RestauranteException("No hay pedidos activos.");
+
+                if (sistema.getPedidoActual().estaVacio())
+                    throw PedidoVacioException();
+
+                cout << "Productos en el pedido:\n";
+                sistema.getPedidoActual().mostrarProductos();
+
+                cout << "\nTipo de personalizacion:\n";
+                cout << "1. Agregar ingrediente extra\n";
+                cout << "2. Quitar ingrediente\n";
+                cout << "3. Cambiar tamanio\n";
+                cout << "Seleccione: ";
+
+                int tipo;
+                cin >> tipo;
+                if (cin.fail()) throw EntradaInvalidaException();
+
+                string nombre;
+                double precio;
+
+                switch (tipo) {
+                case 1: {
+                    cout << "Nombre del ingrediente: ";
+                    cin >> nombre;
+                    cout << "Precio extra: C/";
+                    cin >> precio;
+                    sistema.getPedidoActual().decorarUltimoExtra(nombre, precio);
+                    cout << "Ingrediente agregado.\n";
+                    break;
+                }
+                case 2: {
+                    cout << "Ingrediente a quitar: ";
+                    cin >> nombre;
+                    sistema.getPedidoActual().decorarUltimoSin(nombre);
+                    cout << "Ingrediente quitado.\n";
+                    break;
+                }
+                case 3: {
+                    cout << "Nuevo tamanio: ";
+                    cin >> nombre;
+                    cout << "Precio extra: C/";
+                    cin >> precio;
+                    sistema.getPedidoActual().decorarUltimoTamanio(nombre, precio);
+                    cout << "Tamanio cambiado.\n";
+                    break;
+                }
+                default:
+                    throw EntradaInvalidaException();
+                }
+                break;
+            }
+
+            case 6: {
                 cout << "\n--- Pago ---\n";
 
                 if (!sistema.hayPedidos())
@@ -189,13 +247,13 @@ int main() {
                 break;
             }
 
-            case 6:
+            case 7:
                 cout << "\n--- Guardando ---\n";
                 gestor.guardar(sistema.getPedidos());
                 cout << "Pedidos guardados.\n";
                 break;
 
-            case 7:
+            case 8:
                 cout << "\n--- Cargando ---\n";
                 gestor.cargar();
                 cout << "Pedidos cargados.\n";

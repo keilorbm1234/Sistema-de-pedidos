@@ -3,6 +3,9 @@
 #include "Postre.h"
 #include "Pedido.h"
 #include "PedidoVacioException.h"
+#include "ExtraIngrediente.h"
+#include "SinIngrediente.h"
+#include "CambioTamanio.h"
 #include <iostream>
 
 void Pedido::agregarProducto(unique_ptr<Producto> producto) {
@@ -53,6 +56,27 @@ void Pedido::procesarPago(MetodoPago& metodo) const {
 
 const vector<unique_ptr<Producto>>& Pedido::getProductos() const {
 	return productos; 
+}
+
+void Pedido::decorarUltimoExtra(const string& nombre, double precio) {
+	if (productos.empty()) throw PedidoVacioException();
+	auto ultimo = move(productos.back());
+	productos.pop_back();
+	productos.push_back(make_unique<ExtraIngrediente>(move(ultimo), nombre, precio));
+}
+
+void Pedido::decorarUltimoSin(const string& nombre) {
+	if (productos.empty()) throw PedidoVacioException();
+	auto ultimo = move(productos.back());
+	productos.pop_back();
+	productos.push_back(make_unique<SinIngrediente>(move(ultimo), nombre));
+}
+
+void Pedido::decorarUltimoTamanio(const string& tamanio, double precio) {
+	if (productos.empty()) throw PedidoVacioException();
+	auto ultimo = move(productos.back());
+	productos.pop_back();
+	productos.push_back(make_unique<CambioTamanio>(move(ultimo), tamanio, precio));
 }
 
 void Pedido::mostrarProductos() const {

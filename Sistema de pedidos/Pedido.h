@@ -23,6 +23,9 @@ public:
 	void procesarPagoConDescuento(MetodoPago& metodo, const Descuento& descuento) const;
 	const vector<unique_ptr<Producto>>& getProductos() const; //Importante para el calculo. 
 	void mostrarProductos() const; 
+	void decorarUltimoExtra(const string& nombre, double precio);
+	void decorarUltimoSin(const string& nombre);
+	void decorarUltimoTamanio(const string& tamanio, double precio);
 };
 
 

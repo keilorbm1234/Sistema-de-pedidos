@@ -1,6 +1,5 @@
 #pragma once 
 #include <vector> 
-#include "GestorArchivos.h"
 #include "Pedido.h" 
 using namespace std;
 

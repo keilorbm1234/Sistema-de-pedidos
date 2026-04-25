@@ -12,6 +12,7 @@ void GestorArchivos::guardar(const vector<Pedido>& pedidos) const {
 		throw runtime_error("No se pudo abrir el archivo para guardar"); 
 
 	for (const auto& pedido : pedidos) { 
+		if (pedido.estaVacio()) continue;
 		archivo << "--- PEDIDO ---\n"; 
 
 		for (const auto& p : pedido.getProductos()) { 
