@@ -27,18 +27,12 @@
 //excepciones
 #include "RestauranteException.h"
 #include "PedidoVacioException.h"
-//#include "PagoFallidoException.h"
-//#include "ProductoNoEncontradoException.h"
-//#include "MetodoPagoNoEncontradoException.h"	
-//#include "PedidoNoEncontradoException.h"
-//#include "ArchivoInvalidoException.h"
 #include "ArchivoNoEncontradoException.h"
 #include "EntradaInvalidaException.h"
 #include "PagoInsuficienteException.h"
 #include "PagoDigitalException.h"
 #include "PagoNoAutorizadoException.h"
 #include <stdexcept>
-
 
 int main() {
     Sistema sistema;
